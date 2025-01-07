@@ -6,6 +6,9 @@ from flask_socketio import SocketIO , emit
 app = Flask(__name__)
 socketio = SocketIO(app)
 
+@app.route('/')
+def home():
+    return "Hello 👋!"
 
 @socketio.on('connect')
 def handle_connect():
